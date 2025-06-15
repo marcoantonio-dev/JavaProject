@@ -1,0 +1,2 @@
+Professor (id, nome, endereço, categoria)
+Graduação(id, nome)
