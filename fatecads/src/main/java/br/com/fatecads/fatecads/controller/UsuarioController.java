@@ -14,7 +14,7 @@ import br.com.fatecads.fatecads.service.UsuarioService;
 @Controller
 @RequestMapping("/usuarios")
 public class UsuarioController {
-
+    
     @Autowired
     private UsuarioService usuarioService;
 

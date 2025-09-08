@@ -12,6 +12,7 @@ public String login(){
  
 @GetMapping("/home")
 public String home(){
+    System.out.println("passou por aqui");
     return "home";
 }
    

@@ -22,7 +22,6 @@ public class UsuarioService {
         //criptografar a senha
         usuario.setSenhaUsuario(passwordEncoder.encode(usuario.getSenhaUsuario()));
         return usuarioRepository.save(usuario);
-
     }
 
     public List<Usuario> findAll(){
