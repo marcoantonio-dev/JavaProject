@@ -1,0 +1,136 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d1117;
+    margin: 0;
+    padding: 20px;
+    color: #c9d1d9;
+}
+
+h1 {
+    text-align: center;
+    color: #58a6ff;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+}
+
+.btn-cadastrar {
+    background-color: #238636;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    display: inline-block;
+    margin: 30px 0;
+}
+
+.btn-cadastrar:hover {
+    background-color: #2ea043;
+    transform: scale(1.05);
+}
+
+table {
+    width: 85%;
+    margin: 0 auto 30px auto;
+    border-collapse: collapse;
+    background-color: #161b22;
+    box-shadow: 0 0 10px rgba(100, 255, 100, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    color: #c9d1d9;
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+}
+
+tr:hover {
+    background-color: #21262d;
+}
+
+th {
+    background-color: #21262d;
+    color: #58a6ff;
+    font-weight: 600;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.icon-button.edit {
+    background-color: #3fb950;
+}
+
+.icon-button.delete {
+    background-color: #da3633;
+}
+
+.icon-button:hover {
+    transform: scale(1.1);
+    opacity: 0.85;
+}
+
+form {
+    width: 38%;
+    margin: 40px auto;
+    padding: 26px;
+    background-color: #161b22;
+    border-radius: 14px;
+    box-shadow: 0 0 10px rgba(40, 255, 40, 0.05);
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    font-weight: 600;
+    color: #8b949e;
+}
+
+input[type="text"],
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    margin-top: 26px;
+    background-color: #238636;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s;
+    border-radius: 30px;
+}
+
+input[type="submit"]:hover {
+    background-color: #2ea043;
+    transform: scale(1.05);
+}

@@ -1,0 +1,44 @@
+<html lang="pt-BR">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Professores</title>
+    <link rel="stylesheet" href="/css/aluno.css" />
+  </head>
+  <body>
+    <h1>👨‍🏫 Lista de Professores</h1>
+
+    <div style="text-align: center;">
+      <a href="/professores/criar" class="btn-cadastrar">Cadastrar</a>
+    </div>
+
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Categoria</th>
+        <th>Graduação</th>
+        <th>Ações</th>
+      </tr>
+      <tr th:each="professor : ${professores}">
+        <td th:text="${professor.id}">*</td>
+        <td th:text="${professor.nome}">*</td>
+        <td th:text="${professor.endereco}">*</td>
+        <td th:text="${professor.categoria}">*</td>
+        <td th:text="${professor.graduacao.nomeGraduacao}">*</td>
+        <td>
+          <div class="action-buttons">
+            <a th:href="@{/professores/editar/{id}(id=${professor.id})}" class="icon-button edit">
+              <i class="fas fa-pen"></i>
+            </a>
+            <a th:href="@{/professores/excluir/{id}(id=${professor.id})}" class="icon-button delete">
+              <i class="fas fa-trash"></i>
+            </a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

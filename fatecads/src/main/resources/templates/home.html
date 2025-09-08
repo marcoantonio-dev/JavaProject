@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Escolar</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Sistema FatecADS</h1>
+  <div class="container">
+    <h3 class="button"><a href="/alunos/listar">Gerenciar Alunos</a></h3>
+    <h3 class="button"><a href="/cursos/listar">Gerenciar Cursos</a></h3>
+ 
+    <a th:href="@{/logout}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sair</a>
+    <form th:action="@{/logout}" id="logout-form" method="post">
+     
+    </form>
+  </div>
+</body>
+</html>

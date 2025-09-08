@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+ 
+<body>
+    <div>
+        <h1>Acesso ao Sistema</h1>
+        <form method="post" th:action="@{/login}">
+            <label for="username">Usuário</label>
+            <input type="text" id="username" name="username" />
+ 
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" />
+ 
+            <button type="submit">Entrar</button>
+        </form>
+        <p th:if="${param.error}">Login inválido</p>
+        <p th:if="${param.logout}">Logout efetuado</p>
+        <form action="/fatecads" method="get">
+            <button type="submit">Voltar para home</button>
+        </form>
+    </div>
+</body>
+ 
+</html>

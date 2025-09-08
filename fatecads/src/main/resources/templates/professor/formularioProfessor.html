@@ -1,0 +1,32 @@
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Professores</title>
+    <link rel="stylesheet" href="/css/aluno.css" />
+  </head>
+  <body>
+    <h1>👨‍🏫 Cadastrar Professores</h1>
+    <form th:action="@{/professores/salvar}" method="POST" th:object="${professor}">
+      <input type="hidden" name="id" th:field="*{id}" readonly />
+
+      <label for="nome">Nome:</label>
+      <input type="text" name="nome" th:field="*{nome}" />
+
+      <label for="endereco">Endereço:</label>
+      <input type="text" name="endereco" th:field="*{endereco}" />
+
+      <label for="categoria">Categoria:</label>
+      <input type="text" name="categoria" th:field="*{categoria}" />
+
+      <label for="graduacao">
+        <select th:field="*{graduacao}">
+          <option value="" disabled selected>Selecione a graduação</option>
+          <option th:each="g : ${graduacoes}" th:text="${g.nomeGraduacao}" th:value="${g.id}"></option>
+        </select>
+      </label>
+
+      <input type="submit" value="Cadastrar" />
+    </form>
+  </body>
+</html>
