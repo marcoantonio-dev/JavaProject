@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import br.com.fatecads.fatecads.dto.AlunoTelefone;
 import br.com.fatecads.fatecads.service.CursoService;
 
 @Controller
@@ -77,6 +78,13 @@ public class AlunoController {
         model.addAttribute("cursos", cursos);
         // retorna a pagina do formulario de aluno
         return "aluno/formularioAluno";
+    }
+
+    @GetMapping("/listar-nome-telefone")
+    public String listarNomeTelefone (Model model){
+        List<AlunoTelefone> alunos = alunoService.buscarNomeETelefone();
+        model.addAttribute("alunos", alunos);
+        return "aluno/listaNomeTelefone";
     }
 
 }
