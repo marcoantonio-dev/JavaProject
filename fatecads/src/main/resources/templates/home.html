@@ -1,22 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema Escolar</title>
-  <link rel="stylesheet" href="/css/index.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Sistema FatecADS</title>
+    <link rel="stylesheet" href="/css/modern-home.css">
 </head>
 <body>
-  <h1>Sistema FatecADS</h1>
-  <div class="container">
-    <h3 class="button"><a href="/alunos/listar">Gerenciar Alunos</a></h3>
-    <h3 class="button"><a href="/cursos/listar">Gerenciar Cursos</a></h3>
-    <h3 class="button"><a href="/alunos/listar-nome-telefone">Listar Nomes e Telefones</a></h3>
- 
-    <a th:href="@{/logout}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sair</a>
-    <form th:action="@{/logout}" id="logout-form" method="post">
-     
-    </form>
-  </div>
+    <div class="home-container">
+        <div class="header">
+            <h1 class="main-title">🎓 Sistema FatecADS</h1>
+            <p class="welcome-text">Bem-vindo ao sistema de gerenciamento acadêmico</p>
+        </div>
+
+        <div class="options-grid">
+            <div class="option-card">
+                <span class="option-icon">👨‍🎓</span>
+                <h3 class="option-title">Gerenciar Alunos</h3>
+                <p class="option-description">
+                    Cadastre, edite e visualize informações dos alunos matriculados no sistema.
+                </p>
+                <a href="/alunos/listar" class="option-link">Acessar Alunos</a>
+            </div>
+
+            <div class="option-card">
+                <span class="option-icon">📚</span>
+                <h3 class="option-title">Gerenciar Cursos</h3>
+                <p class="option-description">
+                    Administre os cursos disponíveis, suas informações e configurações.
+                </p>
+                <a href="/cursos/listar" class="option-link">Acessar Cursos</a>
+            </div>
+
+            <div class="option-card">
+                <span class="option-icon">📞</span>
+                <h3 class="option-title">Lista de Contatos</h3>
+                <p class="option-description">
+                    Visualize rapidamente nomes e telefones dos alunos cadastrados.
+                </p>
+                <a href="/alunos/listar-nome-telefone" class="option-link">Ver Contatos</a>
+            </div>
+        </div>
+
+        <div class="logout-section">
+            <a th:href="@{/logout}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="logout-link">
+                🚪 Sair do Sistema
+            </a>
+            <form th:action="@{/logout}" id="logout-form" method="post" style="display: none;">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
+

@@ -1,31 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="/css/index.css">
+    <title>Login - Sistema FatecADS</title>
+    <link rel="stylesheet" href="/css/modern-login.css">
 </head>
-
 <body>
-    <div>
-        <h1>Acesso ao Sistema</h1>
-        <form method="post" th:action="@{/login}">
-            <label for="username">Usuário</label>
-            <input type="text" id="username" name="username" />
+    <div class="login-container">
+        <div class="header">
+            <h1 class="title">🔐 Acesso ao Sistema</h1>
+            <p class="subtitle">Entre com suas credenciais</p>
+        </div>
 
-            <label for="password">Senha</label>
-            <input type="password" id="password" name="password" />
+        <form method="post" th:action="@{/login}" class="login-form">
+            <div class="form-group">
+                <label for="username" class="form-label">👤 Usuário</label>
+                <input type="text" id="username" name="username" class="form-input" required />
+            </div>
 
-            <button type="submit">Entrar</button>
+            <div class="form-group">
+                <label for="password" class="form-label">🔒 Senha</label>
+                <input type="password" id="password" name="password" class="form-input" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Entrar</button>
         </form>
-        <p th:if="${param.error}">Login inválido</p>
-        <p th:if="${param.logout}">Logout efetuado</p>
-        <form action="/fatecads" method="get">
-            <button type="submit">Voltar para home</button>
-        </form>
+
+        <div th:if="${param.error}" class="message error">
+            ❌ Login inválido. Verifique suas credenciais.
+        </div>
+        
+        <div th:if="${param.logout}" class="message success">
+            ✅ Logout efetuado com sucesso.
+        </div>
+
+        <div class="navigation">
+            <form action="/fatecads" method="get">
+                <button type="submit" class="btn btn-secondary">🏠 Voltar para Home</button>
+            </form>
+        </div>
     </div>
 </body>
-
 </html>
+
